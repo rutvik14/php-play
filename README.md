@@ -1,4 +1,5 @@
 php-play
 ========
 
-code play with php
+Experimenting with code play in: php.
+
