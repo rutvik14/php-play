@@ -40,6 +40,7 @@ FirstName  CHAR(15) NOT NULL,
 LastName CHAR(15) NOT NULL,
 Age INT,
 EmailId CHAR(100) NOT NULL,
+Password CHAR(100) NOT NULL,
 UNIQUE (EmailId)
 )";
 // Execute the query 
@@ -63,15 +64,16 @@ echo "<h1> Enter your details please </h1>";
 echo "<br\>
 
 <form action='insert.php' method='post'>
-FirstName: <input type='text' name='firstname'> <br \>
-LastName: <input type='text' name='lastname'> <br \>
-Age: <input type='number' name='age'> <br \>
-Email Id: <input type='email' name='emailid'> <br \> 
-<input type='submit' >
+FirstName: <input type='text' name='firstname' maxlength='15' required> <br \>
+LastName: <input type='text' name='lastname' maxlength='15' required> <br \>
+Age: <input type='number' name='age' max='130' min='5' required> <br \>
+Email Id/UserName: <input type='email' name='emailid' maxlength='20' required> <br \>
+Password: <input type='password' name='password' maxlength='10' required>  <br \>
+Re-enter Password:<input type='password' name='chkpassword' maxlength='10' placeholder='same as above' required> <br \>
+<input type='submit'>
 </form>
-"; 
+";
 
-echo $_POST[emailid];
 
 mysqli_close($conn);
 
